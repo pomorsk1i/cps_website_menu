@@ -1,0 +1,142 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+@font-face {
+font-family: 'TT Lakes';
+src: url('./fonts/TTLakes-Regular.woff2') format('woff2');
+font-weight: 400;
+font-style: normal;}
+
+@font-face {
+font-family: 'TT Lakes';
+src: url('./fonts/TTLakes-Medium.woff2') format('woff2');
+font-weight: 500;
+font-style: normal;
+}
+
+@font-face {
+font-family: 'TT Lakes';
+src: url('./fonts/TTLakes-Bold.woff2') format('woff2');
+font-weight: 700;
+font-style: normal;
+}
+
+body{
+    font-family: 'TT Lakes', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+a{
+    text-decoration: none;
+    color: inherit;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 320px;
+    height: 100vh;
+    box-shadow: 5px 0 10px 0 rgba(0,0,0,0.2);
+}
+
+.button{
+    display: flex;
+    justify-content: space-around;
+    padding: 16px;
+}
+
+.button-group{
+    margin-right: 25%;
+}
+
+.nav{
+    padding: 16px;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.nav__element{
+    font-family: 'TT Lakes';
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.2px;
+    margin-top: 20px;
+    color: #1B1C21;
+
+}
+
+.active{
+    color: #7E7E82;
+    display: flex;
+}
+
+.active::before{
+    content: '';
+    background-image: url(images/highlight.svg);
+    width: 4px;
+    height: 32px;
+    position: absolute;
+    left: 0;
+    top: 13%;
+}
+
+.contact{
+    padding: 16px;
+    margin-top: 70%;
+}
+
+.contact__img{
+    padding: 8px;
+}
+
+.contact__mail{
+    font-family: 'TT Lakes';
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 1px 16px 0 16px;
+    letter-spacing: -0.2px;
+}
+
+.contact__number{
+    font-family: 'TT Lakes';
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    letter-spacing: -0.6px;
+    padding: 1px 16px 0 16px;
+}
+
+.lang{
+    padding: 1px 16px 0 16px;
+    margin-top: 32px;
+}
+
+button{
+    background: none;
+    border: none;
+    filter: brightness(1) saturate(1);
+    transition: filter 0.3s ease;
+}
+
+button:hover{
+    cursor: pointer;
+    filter: brightness(1.02) saturate(1.05) hue-rotate(45deg);
+}
+
+.button__active{
+    transition: scale 0.2s ease;
+}
+
+.button__active:active{
+    scale: 0.9;
+}
