@@ -1,24 +1,25 @@
 *{
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
 @font-face {
 font-family: 'TT Lakes';
-src: url('./fonts/TTLakes-Regular.woff2') format('woff2');
+src: url('fonts/TTLakes-Regular.woff') format('woff');
 font-weight: 400;
 font-style: normal;}
 
 @font-face {
 font-family: 'TT Lakes';
-src: url('./fonts/TTLakes-Medium.woff2') format('woff2');
+src: url('fonts/TTLakes-Medium.woff2') format('woff2');
 font-weight: 500;
 font-style: normal;
 }
 
 @font-face {
 font-family: 'TT Lakes';
-src: url('./fonts/TTLakes-Bold.woff2') format('woff2');
+src: url('fonts/TTLakes-Bold.woff2') format('woff2');
 font-weight: 700;
 font-style: normal;
 }
@@ -27,6 +28,7 @@ body{
     font-family: 'TT Lakes', sans-serif;
     font-weight: 400;
     font-size: 16px;
+    overflow-x: hidden;
 }
 
 a{
@@ -43,20 +45,33 @@ a{
     width: 320px;
     height: 100vh;
     box-shadow: 5px 0 10px 0 rgba(0,0,0,0.2);
+    background: white;
+    z-index: 1000;
+}
+
+.container aside {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
 }
 
 .button{
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     padding: 16px;
+    align-items: center;
+    flex-shrink: 0;
 }
 
 .button-group{
-    margin-right: 25%;
+    margin-right: auto;
+    margin-left: 16px;
 }
 
 .nav{
     padding: 16px;
+    flex: 1;
+    overflow-y: auto;
 }
 
 ul{
@@ -71,27 +86,30 @@ ul{
     letter-spacing: -0.2px;
     margin-top: 20px;
     color: #1B1C21;
-
+    padding-left: 8px;
+    position: relative;
 }
 
 .active{
     color: #7E7E82;
-    display: flex;
 }
 
 .active::before{
     content: '';
-    background-image: url(images/highlight.svg);
+    background-image: url('images/highlight.svg');
+    background-repeat: no-repeat;
     width: 4px;
     height: 32px;
     position: absolute;
-    left: 0;
-    top: 13%;
+    left: -16px;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
 .contact{
     padding: 16px;
-    margin-top: 70%;
+    margin-top: auto;
+    flex-shrink: 0;
 }
 
 .contact__img{
@@ -105,6 +123,7 @@ ul{
     line-height: 24px;
     padding: 1px 16px 0 16px;
     letter-spacing: -0.2px;
+    margin-top: 16px;
 }
 
 .contact__number{
@@ -114,11 +133,17 @@ ul{
     line-height: 32px;
     letter-spacing: -0.6px;
     padding: 1px 16px 0 16px;
+    margin-top: 12px;
 }
 
 .lang{
     padding: 1px 16px 0 16px;
-    margin-top: 32px;
+    margin-top: 40px;
+}
+
+.contact-buttons {
+    display: flex;
+    gap: 8px;
 }
 
 button{
@@ -126,17 +151,18 @@ button{
     border: none;
     filter: brightness(1) saturate(1);
     transition: filter 0.3s ease;
+    cursor: pointer;
+    padding: 0;
 }
 
 button:hover{
-    cursor: pointer;
-    filter: brightness(1.02) saturate(1.05) hue-rotate(45deg);
+    filter: brightness(1.02) saturate(1.05);
 }
 
 .button__active{
-    transition: scale 0.2s ease;
+    transition: transform 0.2s ease;
 }
 
 .button__active:active{
-    scale: 0.9;
+    transform: scale(0.9);
 }
